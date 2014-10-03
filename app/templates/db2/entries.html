@@ -1,0 +1,18 @@
+<table class="table table-responsive table-condensed">
+    <thead>
+        <tr>
+        {% for colname in colnames %}
+            <th scope="col">{{ colname }}</th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody class="searchable">
+    {% for row in rows %}
+        <tr>
+            {% for e in row %}
+                <td>{{ e }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
