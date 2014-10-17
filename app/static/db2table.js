@@ -1,3 +1,20 @@
+var refreshTimer;
+
+function setRefreshTimer(t) {
+	t = t || 2000;
+	refreshTimer = setInterval(function() {
+	    rex = search();
+	    populate(rex);
+	}, t);
+}
+
+function disableRefresh() {
+	if (!refreshTimer) {
+		clearInterval(refreshTimer);
+		refreshTimer = null;
+	}
+}
+
 $(document).ready(function(){
    var rex;
    function search (){
@@ -29,8 +46,6 @@ $(document).ready(function(){
        });
    }
    populate(rex);
-   setInterval(function() {
-       rex = search();
-       populate(rex);
-   }, 2000);
+   setRefreshTimer();
 });
+
