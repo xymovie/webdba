@@ -1,3 +1,4 @@
+//timer id
 var refreshTimer;
 
 function setRefreshTimer(t) {
@@ -14,6 +15,7 @@ function disableRefresh() {
 		refreshTimer = null;
 	}
 }
+
 
 $(document).ready(function(){
    var rex;
